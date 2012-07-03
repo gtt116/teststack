@@ -22,6 +22,11 @@ echo '[+] create instance: server-2'
 # Create a intance with same_host with bd976f4a-ddd7-407f-bd30-2b74428e3716,
 # and different host with bd976f4a-ddd7-407f-bd30-2b74428e3716, so that action
 # will be faild.
+# 
+#NOTE:
+# Before use `os:scheduler_hints`, you must add configuration in nova.conf,
+# scheduler_default_filters=DifferentHostFilter,SameHostFilter ....
+	 
 http -v post $URL/servers $XTOKEN <<<  \
 '''
 {
