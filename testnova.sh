@@ -26,42 +26,41 @@ http -v get $URL/servers/detail $XTOKEN
 #NOTE:
 # Before use `os:scheduler_hints`, you must add configuration in nova.conf,
 # scheduler_default_filters=DifferentHostFilter,SameHostFilter ....
-#http -v post $URL/servers $XTOKEN <<<  \
-#'''
-#{
-#    "server": {
-#        "name": "server-2",
-#        "imageRef": "9496e46d-2a3f-4df0-9220-42151a8c2b1a",
-#        "flavorRef": "2",
-#        "metadata": {
-#            "My Server Name": "Apache1"
-#        }
-#    }
-#}
-#'''
+http -v post $URL/servers $XTOKEN <<<  \
+'''
+{
+    "server": {
+        "name": "server-2",
+        "imageRef": "9496e46d-2a3f-4df0-9220-42151a8c2b1a",
+        "flavorRef": "2",
+        "metadata": {
+            "My Server Name": "Apache1"
+        }
+    }
+}
+'''
 
-
-#'''
-#{
-#    "server": {
-#        "name": "server-2",
-#        "imageRef": "9496e46d-2a3f-4df0-9220-42151a8c2b1a",
-#        "flavorRef": "2",
-#        "metadata": {
-#            "My Server Name": "Apache1"
-#        }
-#    },
-#    "os:scheduler_hints": {
-#        "same_host": [
-#            "bd976f4a-ddd7-407f-bd30-2b74428e3716"
-#        ],
-#        "different_host": [""
-#        ],
-#        "build_near_host_ip": "10.120.34.200",
-#        "cidr": "/24"
-#    }
-#}
-#'''
+'''
+{
+    "server": {
+        "name": "server-2",
+        "imageRef": "9496e46d-2a3f-4df0-9220-42151a8c2b1a",
+        "flavorRef": "2",
+        "metadata": {
+            "My Server Name": "Apache1"
+        }
+    },
+    "os:scheduler_hints": {
+        "same_host": [
+            "bd976f4a-ddd7-407f-bd30-2b74428e3716"
+        ],
+        "different_host": [""
+        ],
+        "build_near_host_ip": "10.120.34.200",
+        "cidr": "/24"
+    }
+}
+'''
 
 #- -- test Security group api addSecurityGroup, removeSecurityGroup
 #echo '[+] get securitys'
