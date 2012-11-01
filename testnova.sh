@@ -31,7 +31,7 @@ http -v post $URL/servers $XTOKEN <<<  \
 {
     "server": {
         "name": "server-2",
-	"tenant_id": "e6d95541456b4f829952c598b0970ea7",
+        "tenant_id": "e6d95541456b4f829952c598b0970ea7",
         "imageRef": "95843b03-e8ad-4839-8e1f-4ae0e925f9bc",
         "flavorRef": "2",
         "availability_zone": "nova",
@@ -42,28 +42,27 @@ http -v post $URL/servers $XTOKEN <<<  \
 }
 '''
 
-
-#'''
-#{
-#    "server": {
-#        "name": "server-2",
-#        "imageRef": "9496e46d-2a3f-4df0-9220-42151a8c2b1a",
-#        "flavorRef": "2",
-#        "metadata": {
-#            "My Server Name": "Apache1"
-#        }
-#    },
-#    "os:scheduler_hints": {
-#        "same_host": [
-#            "bd976f4a-ddd7-407f-bd30-2b74428e3716"
-#        ],
-#        "different_host": [""
-#        ],
-#        "build_near_host_ip": "10.120.34.200",
-#        "cidr": "/24"
-#    }
-#}
-#'''
+'''
+{
+    "server": {
+        "name": "server-2",
+        "imageRef": "9496e46d-2a3f-4df0-9220-42151a8c2b1a",
+        "flavorRef": "2",
+        "metadata": {
+            "My Server Name": "Apache1"
+        }
+    },
+    "os:scheduler_hints": {
+        "same_host": [
+            "bd976f4a-ddd7-407f-bd30-2b74428e3716"
+        ],
+        "different_host": [""
+        ],
+        "build_near_host_ip": "10.120.34.200",
+        "cidr": "/24"
+    }
+}
+'''
 
 #- -- test Security group api addSecurityGroup, removeSecurityGroup
 #echo '[+] get securitys'
