@@ -1,7 +1,7 @@
 #!/bin/bash
 # test for nova
-URL='http://114.113.199.9:8774/v1.1/149696bd1d1941afbeeb986b4e0fa75a'
-XTOKEN='x-auth-token:49690cdc16824d3b94f37a6dbb0485d9'
+URL='http://114.113.199.19:8774/v1.1/9e3985ac560b4fa48ba9cc06b5b31c4e'
+XTOKEN='x-auth-token:dffce28afe2e48e5821b422757c2c5eb'
 
 # http://114.113.199.9:8774/v1.1/149696bd1d1941afbeeb986b4e0fa75a/flavors/2
 
@@ -18,7 +18,7 @@ echo '[+] get servers'
 http -v get $URL/servers/detail $XTOKEN
 
 # ----------------------------------
-#echo '[+] create instance: server-2'
+echo '[+] create instance: server-2'
 # Create a intance with same_host with bd976f4a-ddd7-407f-bd30-2b74428e3716,
 # and different host with bd976f4a-ddd7-407f-bd30-2b74428e3716, so that action
 # will be faild.
@@ -26,19 +26,21 @@ http -v get $URL/servers/detail $XTOKEN
 #NOTE:
 # Before use `os:scheduler_hints`, you must add configuration in nova.conf,
 # scheduler_default_filters=DifferentHostFilter,SameHostFilter ....
-#http -v post $URL/servers $XTOKEN <<<  \
-#'''
-#{
-#    "server": {
-#        "name": "server-2",
-#        "imageRef": "9496e46d-2a3f-4df0-9220-42151a8c2b1a",
-#        "flavorRef": "2",
-#        "metadata": {
-#            "My Server Name": "Apache1"
-#        }
-#    }
-#}
-#'''
+http -v post $URL/servers $XTOKEN <<<  \
+'''
+{
+    "server": {
+        "name": "server-2",
+	"tenant_id": "e6d95541456b4f829952c598b0970ea7",
+        "imageRef": "95843b03-e8ad-4839-8e1f-4ae0e925f9bc",
+        "flavorRef": "2",
+        "availability_zone": "nova",
+        "metadata": {
+            "netease-reserved": "loadbalancer"
+        }
+    }
+}
+'''
 
 
 #'''
@@ -65,7 +67,7 @@ http -v get $URL/servers/detail $XTOKEN
 
 #- -- test Security group api addSecurityGroup, removeSecurityGroup
 #echo '[+] get securitys'
-http -v post $URL/servers/6ac0fb78-2d55-487f-8ee2-a2eda480f0de/action $XTOKEN <<<'{"addSecurityGroup":{"name":"default"}}'
+#http -v post $URL/servers/6ac0fb78-2d55-487f-8ee2-a2eda480f0de/action $XTOKEN <<<'{"addSecurityGroup":{"name":"default"}}'
 #POST /v1.1/149696bd1d1941afbeeb986b4e0fa75a/servers/6ac0fb78-2d55-487f-8ee2-a2eda480f0de/action HTTP/1.1
 #Accept-Encoding: identity, deflate, compress, gzip
 #Accept: application/json
