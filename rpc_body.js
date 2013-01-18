@@ -1,7 +1,9 @@
-# topic = 'compute.114-113-199-8'
-# msg = {'method': 'service_version',
+/*
+topic = 'compute.114-113-199-8'
+msg = {'method': 'service_version',
          'version': '2.0'}
-# rpc.call(admin_context, topic, msg)
+rpc.call(admin_context, topic, msg)
+*/
 
 {
     "_context_roles": [],
