@@ -1,5 +1,5 @@
 /*
- The content of database table instance_info_caches example.
+ The example content of column "network_info" in table instance_info_caches.
 */
 
 [
