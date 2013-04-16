@@ -1,7 +1,7 @@
-	
+
 def _destroy():
 	virt_dom.destroy()
-		
+
 def _undefine_domain():
 	virt_dom.undefine()
 
@@ -12,7 +12,7 @@ def _cleanup():
 	# delete blocking
 	# delete instance dir
 	# clean lvm
-		
+
 def destroy():
 	# details is shown below
 
