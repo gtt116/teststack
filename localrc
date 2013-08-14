@@ -1,0 +1,16 @@
+ADMIN_PASSWORD=password
+MYSQL_PASSWORD=password
+RABBIT_PASSWORD=password
+SERVICE_PASSWORD=password
+SERVICE_TOKEN=tokentoken
+
+# OFFLINE=True
+OFFLINE=False
+
+USE_SCREEN=False
+LOG_COLOR=False
+
+LOGFILE=/opt/stack/log/stack.log
+EXTRA_OPTS=(log_dir=/var/log/nova)
+
+KEYSTONE_TOKEN_FORMAT=UUID
