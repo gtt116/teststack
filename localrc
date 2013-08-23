@@ -7,6 +7,8 @@ SERVICE_TOKEN=tokentoken
 # OFFLINE=True
 OFFLINE=False
 
+NO_UPDATE_REPOS=True
+
 USE_SCREEN=False
 LOG_COLOR=False
 
