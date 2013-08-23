@@ -1,3 +1,7 @@
+sudo mkdir -p /var/log/nova
+sudo chown `whoami`.`whoami` /var/log/nova -R
+
+
 ADMIN_PASSWORD=password
 MYSQL_PASSWORD=password
 RABBIT_PASSWORD=password
