@@ -1,6 +1,6 @@
 sudo mkdir -p /var/log/nova
 sudo chown `whoami`.`whoami` /var/log/nova -R
-
+GIT_BASE=http://git.openstack.org
 
 ADMIN_PASSWORD=password
 MYSQL_PASSWORD=password
@@ -11,12 +11,29 @@ SERVICE_TOKEN=tokentoken
 # OFFLINE=True
 OFFLINE=False
 
-NO_UPDATE_REPOS=True
+# NO_UPDATE_REPOS=True
 
-USE_SCREEN=False
+# USE_SCREEN=False
 LOG_COLOR=False
 
 LOGFILE=/opt/stack/log/stack.log
 EXTRA_OPTS=(log_dir=/var/log/nova)
 
 KEYSTONE_TOKEN_FORMAT=UUID
+
+#######################################
+# Using Neutron rather than nova-network
+#######################################
+# disable_service n-net
+# enable_service q-svc
+# enable_service q-agt
+# enable_service q-dhcp
+# enable_service q-l3
+# enable_service q-meta
+# enable_service quantum
+# Q_PLUGIN=ml2
+# Q_ML2_TENANT_NETWORK_TYPE=vxlan
+# Q_ML2_PLUGIN_VXLAN_TYPE_OPTIONS=(vni_ranges=400:500)
+# TENANT_TUNNEL_RANGES=50:100
+# ENABLE_TENANT_TUNNELS=True
+
