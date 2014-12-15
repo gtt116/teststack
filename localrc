@@ -1,6 +1,7 @@
 sudo mkdir -p /var/log/nova
 sudo chown `whoami`.`whoami` /var/log/nova -R
-GIT_BASE=http://git.openstack.org
+#GIT_BASE=http://git.openstack.org
+GIT_BASE=https://git.oschina.net
 
 ADMIN_PASSWORD=password
 MYSQL_PASSWORD=password
