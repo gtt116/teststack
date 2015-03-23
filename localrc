@@ -3,6 +3,13 @@ sudo chown `whoami`.`whoami` /var/log/nova -R
 #GIT_BASE=http://git.openstack.org
 GIT_BASE=https://git.oschina.net
 
+# Disable heat service also do not download fedora image
+# I need it to speed up devstack
+disable_service h-eng
+disable_service h-api
+disable_service h-api-cfn
+disable_service h-api-cw
+
 IMAGE_URLS=http://git.oschina.net/gtt116/cirros/raw/master/cirros-0.3.0-x86_64-disk.img
 
 ADMIN_PASSWORD=password
