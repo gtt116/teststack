@@ -6,6 +6,9 @@ GIT_BASE=http://git.trystack.cn
 NOVNC_REPO=http://git.trystack.cn/kanaka/noVNC.git
 SPICE_REPO=http://git.trystack.cn/git/spice/spice-html5.git
 
+DATA_DIR=/home/stack/data
+SERVICE_DIR=/home/stack/status 
+
 # Disable heat service also do not download fedora image
 # I need it to speed up devstack
 disable_service h-eng
