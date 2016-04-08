@@ -1,7 +1,10 @@
 sudo mkdir -p /var/log/nova
 sudo chown `whoami`.`whoami` /var/log/nova -R
-#GIT_BASE=http://git.openstack.org
-GIT_BASE=https://git.oschina.net
+
+# use TryStack git mirror
+GIT_BASE=http://git.trystack.cn
+NOVNC_REPO=http://git.trystack.cn/kanaka/noVNC.git
+SPICE_REPO=http://git.trystack.cn/git/spice/spice-html5.git
 
 # Disable heat service also do not download fedora image
 # I need it to speed up devstack
